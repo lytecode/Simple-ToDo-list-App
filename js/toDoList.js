@@ -6,8 +6,6 @@
 	var completed = document.getElementById('completed');
 	var completedBtn = document.getElementById('completedBtn');
 
-	var span = document.createElement('span');
-	var removeBtn = document.createTextNode('x');
 
 	/*
 	* @return: (String) str
@@ -25,17 +23,29 @@
 		}
 	}
 
+
 	function makeLiElement(str){
 		var li = document.createElement('li');
 		var checkbox = document.createElement('input');
 		var span = document.createElement('span');
 
+		var closeSpan = document.createElement('span');
+		var closeBtn = document.createElement('button');
+		
+		closeBtn.innerHTML = 'x';
+		closeSpan.id = 'close';
+		closeSpan.appendChild(closeBtn);
+
 		checkbox.type = 'checkbox';
 		span.textContent = str;
 
-		checkbox.addEventListener('click', onCheck);
 		li.appendChild(checkbox);
 		li.appendChild(span);
+		li.appendChild(closeSpan);
+
+		checkbox.addEventListener('click', onCheck);
+
+		closeBtn.addEventListener('click', close);
 
 		return li;
 	}
@@ -51,6 +61,14 @@
 		else if(listParentId === 'completed'){
 			todo.appendChild(checkBoxParent);
 		}
+	}
+
+	function close(event){
+		var closeBtnParent = event.target.parentElement;
+		var closeLiElement = closeBtnParent.parentElement;
+		closeLiElement.style.display = 'none';
+
+		//event.preventDefault();
 	}
 
 
@@ -81,6 +99,7 @@
 
 
 	completedBtn.addEventListener('click', hideShow);
+	completedBtn.event.preventDefault();
 
 	btn.addEventListener('click', onInput);
 
