@@ -3,6 +3,7 @@ body{
 	text-align: center;
 	color: blue;
 	background-color: rgb(0,177,176);
+	width: 97%;
 }
 
 h1{
@@ -16,16 +17,13 @@ li{
 	list-style: none;
 	text-align: left;
 	width: 50%;
-	border: 1px;
 	background-color: whitesmoke;
 	position: relative;
 	left: 20%;
 
+
 }
 
-#completed{
-	opacity: 0.7;
-}
 
 button{
 	text-align: center;
@@ -39,16 +37,25 @@ input{
 	padding: 10px;
 }
 
-ul li.checked{
-	background-color: gray;
-	color: lime;
+#completed{
+	opacity: 0.7;
+	color: black;
 	text-decoration: line-through;
 }
 
 #close{
-	border-style: solid 5px red;
     position: absolute;
     right: -15px;
     top: -11px;
     padding: 12px 16px 12px 16px;
+}
+
+ul{
+	padding: 10px;
+	margin: 10px;
+}
+
+footer {
+	color: white;
+	position: relative;
 }

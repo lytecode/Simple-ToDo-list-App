@@ -1,7 +1,7 @@
 
 
 	var input = document.getElementById('input');
-	var btn = document.getElementById('btn');
+	var addBtn = document.getElementById('addBtn');
 	var todoTag = document.getElementById('todo');
 	var completed = document.getElementById('completed');
 	var completedBtn = document.getElementById('completedBtn');
@@ -67,8 +67,6 @@
 		var closeBtnParent = event.target.parentElement;
 		var closeLiElement = closeBtnParent.parentElement;
 		closeLiElement.style.display = 'none';
-
-		//event.preventDefault();
 	}
 
 
@@ -99,9 +97,8 @@
 
 
 	completedBtn.addEventListener('click', hideShow);
-	completedBtn.event.preventDefault();
 
-	btn.addEventListener('click', onInput);
+	addBtn.addEventListener('click', onInput);
 
 	input.focus();
 
